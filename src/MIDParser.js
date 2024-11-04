@@ -33,7 +33,7 @@ class MIDParser extends Transform {
         opts.writableObjectMode = true;        
         opts.readableObjectMode = true;
 
-        super(opts);
+        super({ ...opts, autoDestroy: false });
     }
 
     _transform(chunk, encoding, cb) {

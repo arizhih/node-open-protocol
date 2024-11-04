@@ -40,7 +40,7 @@ class LinkLayer extends Duplex {
         opts.readableObjectMode = true;
         opts.writableObjectMode = true;
 
-        super(opts);
+        super({ ...opts, autoDestroy: false });
 
         if (opts.stream === undefined) {
             debug("LinkLayer constructor err-socket-undefined");

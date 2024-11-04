@@ -26,7 +26,7 @@ class OpenProtocolParser extends Transform {
         opts.readableObjectMode = true;
         opts.decodeStrings = true;
 
-        super(opts);
+        super({ ...opts, autoDestroy: false });
 
         this.rawData = opts.rawData || false;
         this._nBuffer = null;

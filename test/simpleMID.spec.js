@@ -146,7 +146,7 @@ describe("Simple MIDs", () => {
     it("MID0040", (done) => {
 
         let midTest = 40;
-        let revisions = 5;
+        let revisions = 7;
 
         let mid = mids[midTest];
         let msg = {

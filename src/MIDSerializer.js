@@ -28,7 +28,7 @@ class MIDSerializer extends Transform {
         opts = opts || {};
         opts.writableObjectMode = true;
         opts.readableObjectMode = true;
-        super(opts);
+        super({ ...opts, autoDestroy: false });
     }
 
     _transform(chunk, encoding, cb) {

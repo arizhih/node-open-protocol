@@ -24,12 +24,13 @@ describe("Open Protocol Parser", () => {
 
     it('should emit an error when input is not a buffer', (done) => {
         let parser = new OpenProtocolParser();
-        parser.on('error', (err) => {
+
+        try {
+            parser.write({});
+        } catch (err) {
             expect(err).to.be.an('error');
             done();
-        });
-
-        parser.write({});
+        }
     });
 
     it('should parse normally when the input is a string', (done) => {
@@ -280,7 +281,7 @@ describe("Open Protocol Parser", () => {
 
             response.push(data);
 
-            if(response.length < 2) return;
+            if (response.length < 2) return;
 
             expect(response).to.be.deep.equal([{
                 mid: 240,
@@ -292,7 +293,7 @@ describe("Open Protocol Parser", () => {
                 messageParts: 0,
                 messageNumber: 0,
                 payload: Buffer.from("20")
-            },        
+            },
             {
                 mid: 5555,
                 revision: 1,
@@ -332,5 +333,5 @@ describe("Open Protocol Parser", () => {
         // 002202400010        20[Null]
         parser.write('0039008100          2018-06-08:20:50:09\u0000');
     });
-    
+
 });

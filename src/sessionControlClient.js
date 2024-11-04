@@ -435,7 +435,7 @@ class SessionControlClient extends EventEmitter {
         this.autoRevision = {};
 
         // handles Node versions older than 8.x
-        if(typeof this.ll.destroy === 'function'){
+        if (typeof this.ll.destroy === 'function') {
             this.ll.destroy();
         } else {
             this.ll._destroy();
@@ -753,7 +753,7 @@ class SessionControlClient extends EventEmitter {
                 cb = opts;
                 opts = {};
             } else {
-                cb = () => {};
+                cb = () => { };
             }
         }
 
@@ -1011,7 +1011,7 @@ class SessionControlClient extends EventEmitter {
             let midNumber = data.payload.midNumber;
 
             // Verify that the mid referenced in the response is equal to the mid sent.
-            if (midNumber !== this.midInProcess.midNumber) {
+            if ((this.midInProcess.type === GENERIC && midNumber !== this.midInProcess._baseMid.payload.midNumber) || midNumber !== this.midInProcess.midNumber ) {
                 let err = new Error(`[Session Control Client] invalid acknowledge, expect MID[${this.midInProcess.midNumber}], received MID[${midNumber}]`);
                 debug('SessionControlClient _receiverData err-invalid_acknowledge', midNumber, this.midInProcess.midNumber);
                 this.midInProcess.doCallback(err);

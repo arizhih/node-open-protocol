@@ -27,7 +27,7 @@ var debug = util.debuglog('open-protocol');
  * @param {number} Header.sequenceNumber For acknowledging on “Link Level” with MIDs 0997 and 0998.
  * @param {number} Header.messageParts Linking function can be up to 9 = possible to send 9*9999 bytes messages. ~ 90 kB.
  * @param {number} Header.messageNumber Linking function, can be 1- 9 at message length > 9999.
- * @param {buffer | string} Header.payload the user's data
+ * @param {Buffer | string} Header.payload the user's data
  */
 
 class OpenProtocolSerializer extends Transform {
@@ -41,7 +41,7 @@ class OpenProtocolSerializer extends Transform {
     constructor(opts) {
         opts = opts || {};
         opts.writableObjectMode = true;
-        super(opts);
+        super({ ...opts, autoDestroy: false });
         debug("new openProtocolSerializer");
     }
 
