@@ -68,5 +68,10 @@
         "request": 9999,
         "reply": 9999,
         "generic": false
+    },
+    "operationResultOverallDataUpload": {
+        "request": 1201,
+        "reply": 1203,
+        "generic": true
     }
 }

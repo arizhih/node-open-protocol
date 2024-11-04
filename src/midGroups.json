@@ -148,5 +148,21 @@
         "unsubscribe": 503,
         "ack": 502,
         "generic": true
+    },
+    "operationResultOverallData": {
+        "data": 1201,
+        "subscribe": 1201,
+        "unsubscribe": 1201,
+        "ack": 1203,
+        "generic": true
+    },
+    "operationResultObjectData": {
+        "data": 1202,
+        "subscribe": 1202,
+        "unsubscribe": 1202,
+        "ack": 1203,
+        "generic": true
     }
+
+    
 }

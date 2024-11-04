@@ -20,5 +20,7 @@
     "262": "toolTagID",
     "401": "automaticManualMode",
     "421": "openProtocolCommandsDisabled",
-    "501": "motorTuningResultData"
+    "501": "motorTuningResultData",
+    "1201": "operationResultOverallData",
+    "1202": "operationResultObjectData"
 }

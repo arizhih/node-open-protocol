@@ -16,5 +16,6 @@
     "125": "jobLineControlAlert1",
     "108": "lastPowerMACSTighteningResultBoltData",
     "48": "toolPairingHandling",
+    "1203": "operationResultOverallDataUpload",
     "9999": "keepAlive"
 }
